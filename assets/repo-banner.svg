@@ -1,0 +1,14 @@
+<svg width="1200" height="330" viewBox="0 0 1200 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1200" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#08111F"/><stop offset="0.52" stop-color="#0F3D5E"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<linearGradient id="line" x1="70" y1="270" x2="1120" y2="270"><stop stop-color="#38BDF8"/><stop offset="0.5" stop-color="#22C55E"/><stop offset="1" stop-color="#F59E0B"/></linearGradient>
+</defs>
+<rect width="1200" height="330" rx="28" fill="url(#bg)"/>
+<circle cx="1090" cy="50" r="180" fill="#38BDF8" opacity="0.12"/>
+<circle cx="80" cy="310" r="170" fill="#22C55E" opacity="0.10"/>
+<text x="70" y="92" fill="#E5F3FF" font-family="Segoe UI, Arial" font-size="44" font-weight="800">AWS IaC Enterprise Library</text>
+<text x="70" y="143" fill="#BAE6FD" font-family="Segoe UI, Arial" font-size="26" font-weight="600">Terraform modules • secure defaults • SRE • FinOps • DevSecOps</text>
+<text x="70" y="198" fill="#F8FAFC" font-family="Consolas, monospace" font-size="21">50+ reusable AWS resource starters for infrastructure and platform teams.</text>
+<rect x="70" y="260" width="1060" height="7" rx="3.5" fill="url(#line)"/>
+<text x="70" y="298" fill="#CBD5E1" font-family="Segoe UI, Arial" font-size="18">Public sanitized portfolio by Eduardo Pin</text>
+</svg>

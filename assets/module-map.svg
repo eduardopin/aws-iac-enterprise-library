@@ -1,0 +1,16 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="520" rx="24" fill="#0B1120"/>
+<text x="50" y="60" fill="#F8FAFC" font-family="Segoe UI, Arial" font-size="34" font-weight="700">Module Catalog Domains</text>
+<g font-family="Segoe UI, Arial" font-size="20" fill="#E5E7EB">
+<rect x="50" y="100" width="250" height="90" rx="18" fill="#123B63"/><text x="75" y="155">Networking</text>
+<rect x="330" y="100" width="250" height="90" rx="18" fill="#1E3A8A"/><text x="355" y="155">Identity & Security</text>
+<rect x="610" y="100" width="250" height="90" rx="18" fill="#065F46"/><text x="635" y="155">Storage & Data</text>
+<rect x="890" y="100" width="250" height="90" rx="18" fill="#92400E"/><text x="915" y="155">Compute</text>
+<rect x="50" y="230" width="250" height="90" rx="18" fill="#312E81"/><text x="75" y="285">Containers</text>
+<rect x="330" y="230" width="250" height="90" rx="18" fill="#7F1D1D"/><text x="355" y="285">Database</text>
+<rect x="610" y="230" width="250" height="90" rx="18" fill="#134E4A"/><text x="635" y="285">Edge & DNS</text>
+<rect x="890" y="230" width="250" height="90" rx="18" fill="#4C1D95"/><text x="915" y="285">API & Delivery</text>
+<rect x="50" y="360" width="530" height="90" rx="18" fill="#164E63"/><text x="75" y="415">Observability & Governance</text>
+<rect x="610" y="360" width="530" height="90" rx="18" fill="#78350F"/><text x="635" y="415">Analytics & FinOps Evidence</text>
+</g>
+</svg>

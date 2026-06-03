@@ -1,0 +1,14 @@
+apiVersion: karpenter.sh/v1
+kind: NodePool
+metadata:
+  name: ${name}
+spec:
+  template:
+    spec:
+      requirements:
+        - key: karpenter.sh/capacity-type
+          operator: In
+          values: ["${capacity_type}"]
+        - key: karpenter.k8s.aws/instance-family
+          operator: In
+          values: ["${instance_family}"]

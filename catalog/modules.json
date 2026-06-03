@@ -1,0 +1,354 @@
+{
+  "repository": "aws-iac-enterprise-library",
+  "module_count": 58,
+  "modules": [
+    {
+      "category": "networking",
+      "name": "vpc",
+      "description": "AWS VPC baseline with DNS support and consistent tagging.",
+      "path": "modules/vpc"
+    },
+    {
+      "category": "networking",
+      "name": "subnet",
+      "description": "Subnet wrapper for public, private and isolated network segments.",
+      "path": "modules/subnet"
+    },
+    {
+      "category": "networking",
+      "name": "route_table",
+      "description": "Route table starter with reusable tagging and route definitions.",
+      "path": "modules/route_table"
+    },
+    {
+      "category": "networking",
+      "name": "internet_gateway",
+      "description": "Internet Gateway attachment module.",
+      "path": "modules/internet_gateway"
+    },
+    {
+      "category": "networking",
+      "name": "nat_gateway",
+      "description": "NAT Gateway starter for private subnet egress.",
+      "path": "modules/nat_gateway"
+    },
+    {
+      "category": "networking",
+      "name": "security_group",
+      "description": "Security group with managed ingress and egress rules.",
+      "path": "modules/security_group"
+    },
+    {
+      "category": "networking",
+      "name": "vpc_endpoint",
+      "description": "Interface/Gateway VPC Endpoint starter.",
+      "path": "modules/vpc_endpoint"
+    },
+    {
+      "category": "networking",
+      "name": "transit_gateway_attachment",
+      "description": "Transit Gateway VPC attachment wrapper.",
+      "path": "modules/transit_gateway_attachment"
+    },
+    {
+      "category": "identity-security",
+      "name": "iam_role",
+      "description": "IAM role with assume-role policy and managed policy attachments.",
+      "path": "modules/iam_role"
+    },
+    {
+      "category": "identity-security",
+      "name": "iam_policy",
+      "description": "IAM policy document wrapper.",
+      "path": "modules/iam_policy"
+    },
+    {
+      "category": "identity-security",
+      "name": "kms_key",
+      "description": "KMS key with rotation enabled by default.",
+      "path": "modules/kms_key"
+    },
+    {
+      "category": "identity-security",
+      "name": "secretsmanager_secret",
+      "description": "AWS Secrets Manager secret metadata wrapper.",
+      "path": "modules/secretsmanager_secret"
+    },
+    {
+      "category": "identity-security",
+      "name": "ssm_parameter",
+      "description": "SSM Parameter Store value wrapper.",
+      "path": "modules/ssm_parameter"
+    },
+    {
+      "category": "identity-security",
+      "name": "waf_web_acl",
+      "description": "AWS WAFv2 Web ACL starter.",
+      "path": "modules/waf_web_acl"
+    },
+    {
+      "category": "identity-security",
+      "name": "guardduty_detector",
+      "description": "GuardDuty detector baseline.",
+      "path": "modules/guardduty_detector"
+    },
+    {
+      "category": "storage-data",
+      "name": "s3_bucket",
+      "description": "S3 bucket with public access block, versioning and encryption defaults.",
+      "path": "modules/s3_bucket"
+    },
+    {
+      "category": "storage-data",
+      "name": "dynamodb_table",
+      "description": "DynamoDB table starter with pay-per-request defaults.",
+      "path": "modules/dynamodb_table"
+    },
+    {
+      "category": "storage-data",
+      "name": "efs_file_system",
+      "description": "EFS file system starter with encryption.",
+      "path": "modules/efs_file_system"
+    },
+    {
+      "category": "storage-data",
+      "name": "backup_vault",
+      "description": "AWS Backup vault baseline.",
+      "path": "modules/backup_vault"
+    },
+    {
+      "category": "storage-data",
+      "name": "backup_plan",
+      "description": "AWS Backup plan baseline.",
+      "path": "modules/backup_plan"
+    },
+    {
+      "category": "messaging-integration",
+      "name": "sqs_queue",
+      "description": "SQS queue with DLQ-friendly defaults.",
+      "path": "modules/sqs_queue"
+    },
+    {
+      "category": "messaging-integration",
+      "name": "sns_topic",
+      "description": "SNS topic wrapper.",
+      "path": "modules/sns_topic"
+    },
+    {
+      "category": "messaging-integration",
+      "name": "eventbridge_rule",
+      "description": "EventBridge rule starter.",
+      "path": "modules/eventbridge_rule"
+    },
+    {
+      "category": "messaging-integration",
+      "name": "scheduler_schedule",
+      "description": "EventBridge Scheduler starter.",
+      "path": "modules/scheduler_schedule"
+    },
+    {
+      "category": "compute-serverless",
+      "name": "lambda_function",
+      "description": "Lambda function wrapper with log group and tracing hooks.",
+      "path": "modules/lambda_function"
+    },
+    {
+      "category": "compute-serverless",
+      "name": "step_function",
+      "description": "Step Functions state machine starter.",
+      "path": "modules/step_function"
+    },
+    {
+      "category": "compute-serverless",
+      "name": "ec2_instance",
+      "description": "EC2 instance starter with metadata hardening.",
+      "path": "modules/ec2_instance"
+    },
+    {
+      "category": "compute-serverless",
+      "name": "autoscaling_group",
+      "description": "Auto Scaling Group starter.",
+      "path": "modules/autoscaling_group"
+    },
+    {
+      "category": "containers",
+      "name": "ecr_repository",
+      "description": "ECR repository with image scanning and lifecycle policy starter.",
+      "path": "modules/ecr_repository"
+    },
+    {
+      "category": "containers",
+      "name": "ecs_cluster",
+      "description": "ECS cluster with container insights option.",
+      "path": "modules/ecs_cluster"
+    },
+    {
+      "category": "containers",
+      "name": "ecs_task_definition",
+      "description": "ECS task definition starter.",
+      "path": "modules/ecs_task_definition"
+    },
+    {
+      "category": "containers",
+      "name": "ecs_service",
+      "description": "ECS service starter for Fargate workloads.",
+      "path": "modules/ecs_service"
+    },
+    {
+      "category": "containers",
+      "name": "eks_cluster",
+      "description": "EKS cluster wrapper for platform teams.",
+      "path": "modules/eks_cluster"
+    },
+    {
+      "category": "containers",
+      "name": "eks_node_group",
+      "description": "EKS managed node group starter.",
+      "path": "modules/eks_node_group"
+    },
+    {
+      "category": "containers",
+      "name": "eks_addon",
+      "description": "EKS managed add-on wrapper.",
+      "path": "modules/eks_addon"
+    },
+    {
+      "category": "containers",
+      "name": "karpenter_node_pool",
+      "description": "Karpenter NodePool manifest starter.",
+      "path": "modules/karpenter_node_pool"
+    },
+    {
+      "category": "database",
+      "name": "rds_subnet_group",
+      "description": "RDS subnet group starter.",
+      "path": "modules/rds_subnet_group"
+    },
+    {
+      "category": "database",
+      "name": "rds_instance",
+      "description": "RDS instance starter with encryption and backup defaults.",
+      "path": "modules/rds_instance"
+    },
+    {
+      "category": "database",
+      "name": "aurora_cluster",
+      "description": "Aurora cluster starter.",
+      "path": "modules/aurora_cluster"
+    },
+    {
+      "category": "database",
+      "name": "elasticache_subnet_group",
+      "description": "ElastiCache subnet group starter.",
+      "path": "modules/elasticache_subnet_group"
+    },
+    {
+      "category": "database",
+      "name": "elasticache_replication_group",
+      "description": "ElastiCache Redis replication group starter.",
+      "path": "modules/elasticache_replication_group"
+    },
+    {
+      "category": "database",
+      "name": "opensearch_domain",
+      "description": "OpenSearch domain starter.",
+      "path": "modules/opensearch_domain"
+    },
+    {
+      "category": "edge-dns",
+      "name": "alb",
+      "description": "Application Load Balancer starter.",
+      "path": "modules/alb"
+    },
+    {
+      "category": "edge-dns",
+      "name": "target_group",
+      "description": "ALB target group starter.",
+      "path": "modules/target_group"
+    },
+    {
+      "category": "edge-dns",
+      "name": "alb_listener",
+      "description": "ALB listener starter.",
+      "path": "modules/alb_listener"
+    },
+    {
+      "category": "edge-dns",
+      "name": "cloudfront_distribution",
+      "description": "CloudFront distribution starter.",
+      "path": "modules/cloudfront_distribution"
+    },
+    {
+      "category": "edge-dns",
+      "name": "route53_zone",
+      "description": "Route 53 hosted zone starter.",
+      "path": "modules/route53_zone"
+    },
+    {
+      "category": "edge-dns",
+      "name": "route53_record",
+      "description": "Route 53 record starter.",
+      "path": "modules/route53_record"
+    },
+    {
+      "category": "edge-dns",
+      "name": "acm_certificate",
+      "description": "ACM certificate starter.",
+      "path": "modules/acm_certificate"
+    },
+    {
+      "category": "api-delivery",
+      "name": "api_gateway_http_api",
+      "description": "API Gateway HTTP API starter.",
+      "path": "modules/api_gateway_http_api"
+    },
+    {
+      "category": "api-delivery",
+      "name": "codebuild_project",
+      "description": "CodeBuild project starter.",
+      "path": "modules/codebuild_project"
+    },
+    {
+      "category": "observability-governance",
+      "name": "cloudwatch_log_group",
+      "description": "CloudWatch log group with retention policy.",
+      "path": "modules/cloudwatch_log_group"
+    },
+    {
+      "category": "observability-governance",
+      "name": "cloudwatch_metric_alarm",
+      "description": "CloudWatch metric alarm starter.",
+      "path": "modules/cloudwatch_metric_alarm"
+    },
+    {
+      "category": "observability-governance",
+      "name": "cloudtrail",
+      "description": "CloudTrail baseline.",
+      "path": "modules/cloudtrail"
+    },
+    {
+      "category": "observability-governance",
+      "name": "config_configuration_recorder",
+      "description": "AWS Config recorder starter.",
+      "path": "modules/config_configuration_recorder"
+    },
+    {
+      "category": "observability-governance",
+      "name": "budget",
+      "description": "AWS Budgets starter.",
+      "path": "modules/budget"
+    },
+    {
+      "category": "analytics",
+      "name": "glue_catalog_database",
+      "description": "Glue Data Catalog database starter.",
+      "path": "modules/glue_catalog_database"
+    },
+    {
+      "category": "analytics",
+      "name": "athena_workgroup",
+      "description": "Athena workgroup starter.",
+      "path": "modules/athena_workgroup"
+    }
+  ]
+}
