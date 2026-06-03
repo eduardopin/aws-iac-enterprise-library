@@ -2,20 +2,20 @@
 
 ![Terraform](https://img.shields.io/badge/Terraform-Module-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-database-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Portfolio%20Starter-111827?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Reference%20Module-111827?style=for-the-badge)
 
 ## Purpose
 
 RDS instance starter with encryption and backup defaults.
 
-This module is part of the **AWS IaC Enterprise Library** portfolio. It is designed as a clean, reusable and readable starting point for infrastructure teams.
+This module is part of the **AWS IaC Enterprise Library** reusable module set. It is designed as a clean, reusable and readable starting point for infrastructure teams.
 
 ## Design principles
 
 - Secure defaults where practical.
 - Consistent `name` and `tags` interface.
 - Small module surface area.
-- Easy review by humans and ATS/recruiters.
+- Easy review by engineering reviewers and maintainers.
 - No company-specific code, credentials or private architecture.
 
 ## Example
