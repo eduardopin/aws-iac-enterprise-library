@@ -5,3 +5,6 @@ crash.log
 *.tfvars
 *.tfvars.json
 .terraform.lock.hcl
+.codex-repo-context.json
+.DS_Store
+.env
