@@ -1,17 +1,19 @@
-
 # Reviewer Guide
 
-## 5-minute review path
+## Quickstart
 
-1. Open the README and inspect the module catalog.
-2. Open `modules/s3_bucket` for secure-by-default conventions.
-3. Open `modules/eks_cluster` and `modules/karpenter_node_pool` for platform engineering alignment.
-4. Open `docs/security-guardrails.md` and `docs/finops-tagging-model.md`.
-5. Open `.github/workflows/terraform-quality.yml`.
+1. Read `README.md` for scope.
+2. Review `docs/security.md`, `docs/reliability.md` and `docs/cost-model.md`.
+3. Inspect examples under `examples/`.
+4. Run `bash scripts/repository_review.sh` when available.
 
-## What this proves
+## What Good Looks Like
 
-- Ability to organize reusable infrastructure assets.
-- Awareness of reliability, security and cost governance.
-- Clean documentation standards for teams.
-- Public portfolio discipline without exposing private employer work.
+- Clear operational purpose.
+- No proprietary values.
+- Small examples with explicit assumptions.
+- Validation that catches common repository hygiene issues.
+
+## Suggested Review Focus
+
+For Aws Iac Enterprise Library, focus on whether the examples are understandable, reusable and constrained enough for safe adaptation.
