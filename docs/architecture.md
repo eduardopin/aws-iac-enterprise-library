@@ -1,16 +1,19 @@
+# Architecture and Component Model
 
-# Architecture
+## Scope
 
-```mermaid
-flowchart LR
-  A[Platform consumer] --> B[Module catalog]
-  B --> C[Terraform module]
-  C --> D[GitHub Actions quality gates]
-  D --> E[AWS account / environment]
-  E --> F[Observability]
-  E --> G[FinOps allocation]
-  E --> H[Security evidence]
-  F --> B
-  G --> B
-  H --> B
-```
+Aws Iac Enterprise Library focuses on reusable patterns rather than environment-specific deployments. Components are documented as replaceable building blocks with clear inputs, outputs and review checkpoints.
+
+## Component Boundaries
+
+- Interface: configuration, templates, policies or runbook inputs that callers control.
+- Implementation: examples and scripts in this repository.
+- Validation: local checks and GitHub Actions workflows that prevent obvious drift.
+- Operations: ownership, escalation and maintenance notes in `docs/operating-model.md`.
+
+## Design Principles
+
+- Prefer explicit configuration over hidden defaults.
+- Keep examples small enough to review.
+- Separate policy decisions from execution mechanics.
+- Document assumptions next to the implementation that depends on them.
