@@ -4,34 +4,23 @@ These are small, verified gaps that the repository owner can turn into GitHub
 issues. Suggested labels are proposals; contributors should use the labels that
 exist in the repository when an issue is opened.
 
-## 1. Add a non-writing Terraform format check
+## 1. Add local parity for the CI Terraform format check
 
 **Suggested labels:** `good first issue`, `testing`, `terraform`
 
-`Makefile` has a `fmt` target that rewrites files, but no target for
-`terraform fmt -check -recursive`.
+`.github/workflows/terraform-quality.yml` already runs
+`terraform fmt -check -recursive`, while `Makefile` has a `fmt` target that
+rewrites files but no local non-writing equivalent.
 
 **Acceptance criteria**
 
-- Add a `fmt-check` target that does not modify files.
+- Add a `make fmt-check` target that mirrors the
+  `terraform fmt -check -recursive` command in
+  `.github/workflows/terraform-quality.yml` without modifying files.
 - Document when to use `fmt` versus `fmt-check` in `CONTRIBUTING.md`.
 - Run the new target successfully across the repository.
 
-## 2. Run the existing repository checks in CI
-
-**Suggested labels:** `good first issue`, `ci`, `testing`
-
-`tools/module_hygiene_check.py` and `tools/public_safety_audit.sh` are local
-checks, while `.github/workflows/validate.yml` currently checks required files,
-whitespace and the docs directory only.
-
-**Acceptance criteria**
-
-- Add explicit CI steps for both existing tools.
-- Keep the checks free of credentials and production access.
-- Confirm both steps pass on the current tree.
-
-## 3. Complete the EC2 example's required inputs
+## 2. Complete the EC2 example's required inputs
 
 **Suggested labels:** `good first issue`, `documentation`, `terraform`
 
@@ -44,7 +33,7 @@ whitespace and the docs directory only.
 - Explain which placeholders adopters must replace.
 - Make the example pass `terraform validate` after provider initialization.
 
-## 4. Complete the ALB example's required subnet input
+## 3. Complete the ALB example's required subnet input
 
 **Suggested labels:** `good first issue`, `documentation`, `terraform`
 
@@ -57,7 +46,7 @@ whitespace and the docs directory only.
 - Keep the example generic and public-safe.
 - Make the example pass `terraform validate` after provider initialization.
 
-## 5. Make VPC variable descriptions useful to callers
+## 4. Make VPC variable descriptions useful to callers
 
 **Suggested labels:** `good first issue`, `documentation`, `terraform`
 
@@ -72,7 +61,7 @@ effect.
 - Describe the expected CIDR notation for `cidr_block` without prescribing an
   organization-specific range.
 
-## 6. Validate the VPC CIDR input
+## 5. Validate the VPC CIDR input
 
 **Suggested labels:** `good first issue`, `validation`, `terraform`
 
@@ -86,7 +75,7 @@ effect.
 - Add one valid and one invalid automated test case, or document a reproducible
   validation check if a test harness is introduced separately.
 
-## 7. Remove VPC's unused local provider requirement
+## 6. Remove VPC's unused local provider requirement
 
 **Suggested labels:** `good first issue`, `dependencies`, `terraform`
 
@@ -99,7 +88,7 @@ effect.
 - Keep the AWS provider and Terraform constraints intact.
 - Run formatting and validate the VPC example after initialization.
 
-## 8. Correct initialisms in the VPC module README
+## 7. Correct initialisms in the VPC module README
 
 **Suggested labels:** `good first issue`, `documentation`
 
@@ -112,7 +101,7 @@ directory and domain convention use `VPC`.
 - Do not change Terraform identifiers such as the `vpc` module label.
 - Check the rendered Markdown for broken headings or links.
 
-## 9. Detect examples that omit required module inputs
+## 8. Detect examples that omit required module inputs
 
 **Suggested labels:** `good first issue`, `testing`, `terraform`
 
@@ -127,7 +116,7 @@ with no default. For example, `examples/ec2_instance/main.tf` omits `ami_id` and
 - Print the example path and missing variable names on failure.
 - Add the check to the documented local validation flow.
 
-## 10. Extend module hygiene to require matching examples
+## 9. Extend module hygiene to require matching examples
 
 **Suggested labels:** `good first issue`, `testing`, `python`
 
@@ -138,5 +127,5 @@ current tree has a match for all 58 modules.
 **Acceptance criteria**
 
 - Fail with a clear path when a module lacks its same-named example.
-- Preserve the existing five-file checks.
+- Preserve the existing five standard-file checks.
 - Keep the script dependency-free and runnable with `make hygiene`.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the landing-page social card and a real validation capture."""
+"""Render landing-page assets; requires Pillow for the social card."""
 
 from __future__ import annotations
 

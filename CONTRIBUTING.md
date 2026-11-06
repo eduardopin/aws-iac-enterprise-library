@@ -6,6 +6,9 @@ Start with one of the scoped tasks in
 [`docs/community/GOOD_FIRST_ISSUES.md`](docs/community/GOOD_FIRST_ISSUES.md), or
 choose one module and its same-named example for a focused documentation fix.
 
+Pillow is only needed to regenerate `site/og.png` with
+`scripts/render_site_assets.py`; it is not needed to use the library.
+
 1. Read the module's `README.md`, `variables.tf` and matching file under
    `examples/` before changing behavior.
 2. Keep placeholder values public-safe and update documentation when an

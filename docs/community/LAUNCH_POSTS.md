@@ -12,9 +12,9 @@ example files and nine engineering guides. The modules cover networking,
 identity and security, storage, messaging, compute, containers, databases,
 delivery, observability and analytics.
 
-Each module uses the same five-file layout and exposes `name` and `tags` where
-documented. The repository also includes security guardrails, a FinOps tagging
-model and local hygiene checks.
+Each module uses the same five standard files and exposes `name` and `tags`
+where documented. The repository also includes security guardrails, a FinOps
+tagging model and local hygiene checks.
 
 I would value specific feedback on module boundaries, input design and which
 examples should be completed first:
@@ -41,7 +41,8 @@ https://eduardopin.github.io/aws-iac-enterprise-library/
 This repository groups small Terraform modules for AWS infrastructure into
 networking, security, storage, compute, containers, database, delivery,
 observability and analytics domains. Every module has a matching example and a
-consistent file layout.
+consistent standard-file layout, although 34 of the 58 same-named examples
+still need at least one required input completed.
 
 The modules are reference starters, so the documentation explicitly asks teams
 to review provider versions, account topology, IAM boundaries and their own
@@ -61,6 +62,9 @@ The result is a repository with 58 Terraform modules, 60 example files and nine
 top-level engineering guides. The module catalogue spans networking, identity
 and security, storage, messaging, compute, containers, databases, edge and DNS,
 API delivery, observability and analytics.
+
+Every module has a matching example, although 34 of the 58 same-named examples
+still need at least one required input completed.
 
 The repository is intentionally a reference implementation rather than a
 production platform. Its docs call out the decisions adopters still own,

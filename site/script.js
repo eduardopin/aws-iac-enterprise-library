@@ -8,7 +8,13 @@ const emptyState = document.querySelector("[data-empty-state]");
 const moduleGroups = Array.from(document.querySelectorAll("[data-module-group]"));
 const moduleItems = Array.from(document.querySelectorAll("[data-module-item]"));
 
-const normalize = (value) => value.toLowerCase().replaceAll("_", " ").trim();
+const normalize = (value) => value.toLowerCase().replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
+
+const matchesFilter = (moduleName, categoryName, query) => {
+  const normalizedQuery = normalize(query);
+  const searchable = `${normalize(moduleName)} ${normalize(categoryName)}`;
+  return !normalizedQuery || searchable.includes(normalizedQuery);
+};
 
 if (filterPanel && filterInput && filterStatus && clearButton && emptyState) {
   filterPanel.hidden = false;
@@ -18,13 +24,13 @@ if (filterPanel && filterInput && filterStatus && clearButton && emptyState) {
     let visibleCount = 0;
 
     moduleGroups.forEach((group) => {
-      const category = normalize(group.dataset.category || "");
+      const category = group.dataset.category || "";
       const items = Array.from(group.querySelectorAll("[data-module-item]"));
       let groupCount = 0;
 
       items.forEach((item) => {
-        const searchable = `${category} ${normalize(item.textContent || "")}`;
-        const matches = !query || searchable.includes(query);
+        const moduleName = item.querySelector("code")?.textContent || "";
+        const matches = matchesFilter(moduleName, category, query);
         item.hidden = !matches;
         if (matches) {
           groupCount += 1;

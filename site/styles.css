@@ -6,7 +6,7 @@
   --surface-raised: #ffffff;
   --text: #171b24;
   --muted: #536074;
-  --faint: #6a7587;
+  --faint: #5f6a7c;
   --border: #ccd2dc;
   --border-strong: #aeb7c5;
   --accent: #8a4b00;
@@ -1006,10 +1006,6 @@ figcaption {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 650;
-}
-
-.license-badge {
-  height: 20px;
 }
 
 @media (max-width: 960px) {
