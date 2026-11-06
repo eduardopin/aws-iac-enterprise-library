@@ -1,5 +1,27 @@
 # Contributing
 
+## Your First Contribution
+
+Start with one of the scoped tasks in
+[`docs/community/GOOD_FIRST_ISSUES.md`](docs/community/GOOD_FIRST_ISSUES.md), or
+choose one module and its same-named example for a focused documentation fix.
+
+1. Read the module's `README.md`, `variables.tf` and matching file under
+   `examples/` before changing behavior.
+2. Keep placeholder values public-safe and update documentation when an
+   interface or assumption changes.
+3. Run the repository's local checks:
+
+   ```sh
+   make quality
+   bash scripts/repository_review.sh
+   ```
+
+   `make quality` formats Terraform and then runs the module-hygiene and
+   public-safety checks. Review any formatting changes before submitting them.
+4. In the contribution description, state what changed and which security,
+   reliability or cost assumption you reviewed.
+
 ## Change Expectations
 
 - Keep pull requests focused on one operational improvement.
