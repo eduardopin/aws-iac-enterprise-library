@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AWS IaC Enterprise Library — reusable Terraform modules</title>
+    <meta name="description" content="Explore 58 reusable Terraform modules, matching examples and engineering guidance for AWS infrastructure.">
+    <link rel="canonical" href="https://eduardopin.github.io/aws-iac-enterprise-library/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AWS IaC Enterprise Library">
+    <meta property="og:description" content="Small Terraform modules. Explicit interfaces. Reviewable AWS infrastructure examples.">
+    <meta property="og:url" content="https://eduardopin.github.io/aws-iac-enterprise-library/">
+    <meta property="og:image" content="https://eduardopin.github.io/aws-iac-enterprise-library/og.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:image:alt" content="AWS IaC Enterprise Library with module, example and guide counts">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AWS IaC Enterprise Library">
+    <meta name="twitter:description" content="Reusable Terraform building blocks for AWS infrastructure.">
+    <meta name="twitter:image" content="https://eduardopin.github.io/aws-iac-enterprise-library/og.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="AWS IaC Enterprise Library home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 3 34 11v18L20 37 6 29V11Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="20" cy="13" r="3"/>
+            <circle cx="13" cy="25" r="3"/>
+            <circle cx="27" cy="25" r="3"/>
+            <path d="m20 16-7 6m7-6 7 6M16 25h8" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span>AWS IaC <strong>Library</strong></span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="#inside">Inside</a></li>
+            <li><a href="#catalogue">Modules</a></li>
+            <li><a href="#standards">Standards</a></li>
+            <li><a href="#use">Use</a></li>
+            <li><a href="#contribute">Contribute</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Terraform building blocks for AWS infrastructure</p>
+            <h1 id="hero-title">Small modules. Explicit interfaces. Reviewable foundations.</h1>
+            <p class="hero-lede">Choose a focused module, inspect its matching example, and adapt it to your platform's security, cost and operating requirements.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#catalogue">Explore 58 modules</a>
+              <a class="button button-secondary" href="https://github.com/eduardopin/aws-iac-enterprise-library">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <ul class="hero-facts" aria-label="Repository facts">
+              <li><strong>58</strong> module directories</li>
+              <li><strong>60</strong> example files</li>
+              <li><strong>9</strong> engineering guides</li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <img src="img/infra-topology.svg" width="720" height="560" alt="Abstract infrastructure graph connecting inputs, reusable modules and review checkpoints">
+            <p class="visual-caption"><span class="status-dot" aria-hidden="true"></span> One interface pattern across the catalogue</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section problem" id="problem" aria-labelledby="problem-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">The problem it solves</p>
+              <h2 id="problem-title">Infrastructure code is easier to reuse when decisions stay visible.</h2>
+            </div>
+            <p>The architecture keeps components replaceable and examples small enough to review. Configuration is explicit, policy decisions remain separate from execution mechanics, and assumptions live beside the implementation.</p>
+          </div>
+          <div class="principle-grid">
+            <article class="principle-card">
+              <span class="card-index">01</span>
+              <h3>Explicit configuration</h3>
+              <p>Callers control inputs instead of depending on hidden, environment-specific defaults.</p>
+            </article>
+            <article class="principle-card">
+              <span class="card-index">02</span>
+              <h3>Replaceable boundaries</h3>
+              <p>Modules are focused building blocks rather than a fixed environment deployment.</p>
+            </article>
+            <article class="principle-card">
+              <span class="card-index">03</span>
+              <h3>Review in context</h3>
+              <p>Examples, validation and operating guidance make implementation assumptions inspectable.</p>
+            </article>
+          </div>
+          <p class="source-note">Source: <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/docs/architecture.md">architecture and component model</a>.</p>
+        </div>
+      </section>
+
+      <section class="section inside" id="inside" aria-labelledby="inside-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">What is inside</p>
+            <h2 id="inside-title">A module catalogue backed by examples and engineering notes.</h2>
+            <p>Counts come directly from <code>scripts/site_stats.py</code>: module directories, all files under <code>examples/</code>, and top-level Markdown guides under <code>docs/</code>.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <strong>58</strong>
+              <h3>Terraform modules</h3>
+              <p>Focused resource starters grouped into 11 practical domains.</p>
+            </article>
+            <article class="stat-card">
+              <strong>60</strong>
+              <h3>Example files</h3>
+              <p>A same-named Terraform example exists for every module, plus two supporting example files.</p>
+            </article>
+            <article class="stat-card">
+              <strong>9</strong>
+              <h3>Engineering guides</h3>
+              <p>Architecture, operations, security, reliability, cost and review guidance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section catalogue" id="catalogue" aria-labelledby="catalogue-title">
+        <div class="shell">
+          <div class="section-heading split-heading catalogue-heading">
+            <div>
+              <p class="eyebrow">Module catalogue</p>
+              <h2 id="catalogue-title">Find the building block you need.</h2>
+            </div>
+            <p>Every entry links to its module directory on GitHub. Categories follow the resource domains represented by the module names.</p>
+          </div>
+
+          <div class="filter-panel" data-filter-panel hidden>
+            <label for="module-filter">Filter modules</label>
+            <div class="filter-row">
+              <input id="module-filter" type="search" inputmode="search" autocomplete="off" placeholder="Try vpc, security, database…" aria-describedby="filter-help filter-status">
+              <button class="filter-clear" type="button" data-filter-clear>Clear</button>
+            </div>
+            <p id="filter-help" class="filter-help">Matches module names and category names.</p>
+            <p id="filter-status" class="filter-status" role="status" aria-live="polite">58 modules shown</p>
+          </div>
+
+          <div class="module-groups">
+            <section class="module-group" data-module-group data-category="networking" aria-labelledby="category-networking">
+              <div class="module-group-heading"><h3 id="category-networking">Networking</h3><span>8 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/vpc"><code>vpc</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/subnet"><code>subnet</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/route_table"><code>route_table</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/internet_gateway"><code>internet_gateway</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/nat_gateway"><code>nat_gateway</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/security_group"><code>security_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/vpc_endpoint"><code>vpc_endpoint</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/transit_gateway_attachment"><code>transit_gateway_attachment</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="identity security" aria-labelledby="category-security">
+              <div class="module-group-heading"><h3 id="category-security">Identity &amp; security</h3><span>7 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/iam_role"><code>iam_role</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/iam_policy"><code>iam_policy</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/kms_key"><code>kms_key</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/secretsmanager_secret"><code>secretsmanager_secret</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ssm_parameter"><code>ssm_parameter</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/waf_web_acl"><code>waf_web_acl</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/guardduty_detector"><code>guardduty_detector</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="storage data backup" aria-labelledby="category-storage">
+              <div class="module-group-heading"><h3 id="category-storage">Storage &amp; data</h3><span>5 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/s3_bucket"><code>s3_bucket</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/dynamodb_table"><code>dynamodb_table</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/efs_file_system"><code>efs_file_system</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/backup_vault"><code>backup_vault</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/backup_plan"><code>backup_plan</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="messaging integration events" aria-labelledby="category-messaging">
+              <div class="module-group-heading"><h3 id="category-messaging">Messaging &amp; integration</h3><span>4 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/sqs_queue"><code>sqs_queue</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/sns_topic"><code>sns_topic</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/eventbridge_rule"><code>eventbridge_rule</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/scheduler_schedule"><code>scheduler_schedule</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="compute serverless" aria-labelledby="category-compute">
+              <div class="module-group-heading"><h3 id="category-compute">Compute &amp; serverless</h3><span>4 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/lambda_function"><code>lambda_function</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/step_function"><code>step_function</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ec2_instance"><code>ec2_instance</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/autoscaling_group"><code>autoscaling_group</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="containers ecs eks" aria-labelledby="category-containers">
+              <div class="module-group-heading"><h3 id="category-containers">Containers</h3><span>8 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ecr_repository"><code>ecr_repository</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ecs_cluster"><code>ecs_cluster</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ecs_task_definition"><code>ecs_task_definition</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/ecs_service"><code>ecs_service</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/eks_cluster"><code>eks_cluster</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/eks_node_group"><code>eks_node_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/eks_addon"><code>eks_addon</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/karpenter_node_pool"><code>karpenter_node_pool</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="database cache search" aria-labelledby="category-database">
+              <div class="module-group-heading"><h3 id="category-database">Databases</h3><span>6 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/rds_subnet_group"><code>rds_subnet_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/rds_instance"><code>rds_instance</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/aurora_cluster"><code>aurora_cluster</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/elasticache_subnet_group"><code>elasticache_subnet_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/elasticache_replication_group"><code>elasticache_replication_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/opensearch_domain"><code>opensearch_domain</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="edge dns load balancing certificate" aria-labelledby="category-edge">
+              <div class="module-group-heading"><h3 id="category-edge">Edge &amp; DNS</h3><span>7 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/alb"><code>alb</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/target_group"><code>target_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/alb_listener"><code>alb_listener</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/cloudfront_distribution"><code>cloudfront_distribution</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/route53_zone"><code>route53_zone</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/route53_record"><code>route53_record</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/acm_certificate"><code>acm_certificate</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="api delivery build" aria-labelledby="category-api">
+              <div class="module-group-heading"><h3 id="category-api">API &amp; delivery</h3><span>2 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/api_gateway_http_api"><code>api_gateway_http_api</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/codebuild_project"><code>codebuild_project</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="observability governance monitoring audit cost" aria-labelledby="category-observability">
+              <div class="module-group-heading"><h3 id="category-observability">Observability &amp; governance</h3><span>5 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/cloudwatch_log_group"><code>cloudwatch_log_group</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/cloudwatch_metric_alarm"><code>cloudwatch_metric_alarm</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/cloudtrail"><code>cloudtrail</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/config_configuration_recorder"><code>config_configuration_recorder</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/budget"><code>budget</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+
+            <section class="module-group" data-module-group data-category="analytics data query" aria-labelledby="category-analytics">
+              <div class="module-group-heading"><h3 id="category-analytics">Analytics</h3><span>2 modules</span></div>
+              <ul class="module-list">
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/glue_catalog_database"><code>glue_catalog_database</code><span aria-hidden="true">↗</span></a></li>
+                <li data-module-item><a href="https://github.com/eduardopin/aws-iac-enterprise-library/tree/main/modules/athena_workgroup"><code>athena_workgroup</code><span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+          </div>
+          <p class="empty-state" data-empty-state hidden>No modules match that filter.</p>
+        </div>
+      </section>
+
+      <section class="section anatomy" id="anatomy" aria-labelledby="anatomy-title">
+        <div class="shell anatomy-grid">
+          <div>
+            <p class="eyebrow">Module anatomy</p>
+            <h2 id="anatomy-title">The same five files, from VPC to analytics.</h2>
+            <p>Every module follows the repository standard. The VPC module is a real example of that layout:</p>
+            <div class="code-frame tree-frame">
+              <pre tabindex="0" aria-label="File tree for the VPC module"><code>modules/vpc/
+├── README.md
+├── main.tf
+├── outputs.tf
+├── variables.tf
+└── versions.tf</code></pre>
+            </div>
+          </div>
+          <dl class="file-list">
+            <div><dt><code>main.tf</code></dt><dd>Resource implementation</dd></div>
+            <div><dt><code>variables.tf</code></dt><dd>Public input interface</dd></div>
+            <div><dt><code>outputs.tf</code></dt><dd>Values exposed to callers</dd></div>
+            <div><dt><code>versions.tf</code></dt><dd>Terraform and provider constraints</dd></div>
+            <div><dt><code>README.md</code></dt><dd>Purpose, example and review checklist</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section capture" id="validation" aria-labelledby="validation-title">
+        <div class="shell capture-grid">
+          <div class="capture-copy">
+            <p class="eyebrow">Real local output</p>
+            <h2 id="validation-title">Repository checks, captured rather than mocked.</h2>
+            <p><code>scripts/render_site_assets.py</code> runs <code>make hygiene safety</code> in the repository root, scrubs machine-specific paths and hostnames if present, and renders the command's actual output.</p>
+            <p class="capture-note">The module-hygiene check verifies the standard files. The public-safety audit scans for configured credential and private-key patterns.</p>
+          </div>
+          <figure>
+            <img src="img/validation-capture.svg" width="1120" height="310" loading="lazy" alt="Terminal capture showing successful module hygiene and public safety audit output">
+            <figcaption>Command: <code>make hygiene safety</code>. Run in: repository root. Capture type: real offline validation run.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section standards" id="standards" aria-labelledby="standards-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">How modules are standardized</p>
+              <h2 id="standards-title">A shared interface, documented guardrails and review points.</h2>
+            </div>
+            <p>These are repository baselines, not a substitute for an adopting team's compliance controls, account topology or production procedures.</p>
+          </div>
+          <div class="standard-grid">
+            <article class="standard-card">
+              <span class="standard-icon" aria-hidden="true">{ }</span>
+              <h3>Interface conventions</h3>
+              <ul>
+                <li><code>name</code> is the primary naming input.</li>
+                <li><code>tags</code> is available for ownership and cost metadata.</li>
+                <li>Resource-specific values are explicit variables.</li>
+                <li>Defaults are conservative where practical.</li>
+              </ul>
+              <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/docs/module-standards.md">Read module standards <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="standard-card">
+              <span class="standard-icon" aria-hidden="true">◇</span>
+              <h3>Security baseline</h3>
+              <ul>
+                <li>Public S3 access is blocked by default.</li>
+                <li>Encryption is enabled where practical.</li>
+                <li>EC2 examples require IMDSv2.</li>
+                <li>IAM examples should be minimized before production.</li>
+              </ul>
+              <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/docs/security-guardrails.md">Read security guardrails <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="standard-card">
+              <span class="standard-icon" aria-hidden="true">$</span>
+              <h3>FinOps metadata</h3>
+              <p class="card-intro">The recommended minimum tag set is:</p>
+              <ul class="tag-list">
+                <li><code>Environment</code></li>
+                <li><code>Owner</code></li>
+                <li><code>Application</code></li>
+                <li><code>CostCenter</code></li>
+                <li><code>ManagedBy</code></li>
+                <li><code>Criticality</code></li>
+              </ul>
+              <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/docs/finops-tagging-model.md">Read the tagging model <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section usage" id="use" aria-labelledby="use-title">
+        <div class="shell usage-grid">
+          <div class="usage-copy">
+            <p class="eyebrow">Use a module</p>
+            <h2 id="use-title">Point Terraform at a module and pin the revision you reviewed.</h2>
+            <p>The repository's VPC example uses the real <code>name</code> and <code>tags</code> inputs. The source below selects that module at the current reviewed <code>origin/main</code> commit.</p>
+            <ol class="steps">
+              <li><span>1</span><div><strong>Choose a module</strong><p>Read its variables, outputs and review checklist.</p></div></li>
+              <li><span>2</span><div><strong>Pin a source revision</strong><p>Use a commit or release ref that your team has reviewed.</p></div></li>
+              <li><span>3</span><div><strong>Adapt the example</strong><p>Replace public placeholders and apply your own controls.</p></div></li>
+            </ol>
+          </div>
+          <div class="code-frame usage-code" data-copy>
+            <div class="code-label">main.tf</div>
+            <pre tabindex="0" aria-label="Terraform example consuming the VPC module from GitHub"><code>module "vpc" {
+  source = "git::https://github.com/eduardopin/aws-iac-enterprise-library.git//modules/vpc?ref=4bc5a339b9bb4b5606c89e053b03593c92e5231b"
+
+  name = "example-vpc"
+
+  tags = {
+    Environment = "dev"
+    Owner       = "platform"
+    ManagedBy   = "terraform"
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="shell review-callout">
+          <strong>Before production use</strong>
+          <p>Review provider versions, compliance requirements, account topology, IAM boundaries, naming conventions and organization-specific guardrails.</p>
+        </div>
+      </section>
+
+      <section class="section contribute" id="contribute" aria-labelledby="contribute-title">
+        <div class="shell contribute-panel">
+          <div>
+            <p class="eyebrow">Contribute</p>
+            <h2 id="contribute-title">Start with one small, verifiable improvement.</h2>
+            <p>The contribution guide keeps changes focused, public-safe and documented. The starter list turns verified gaps in examples, module descriptions and validation into concrete acceptance criteria.</p>
+          </div>
+          <div class="contribute-actions">
+            <a class="button button-primary" href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/docs/community/GOOD_FIRST_ISSUES.md">Browse good first issues</a>
+            <a class="text-link" href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/CONTRIBUTING.md">Read CONTRIBUTING.md <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/SECURITY.md">Report security concerns safely <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div>
+          <a class="brand footer-brand" href="#top">AWS IaC <strong>Library</strong></a>
+          <p>Reusable Terraform building blocks for AWS infrastructure.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/eduardopin/aws-iac-enterprise-library">Repository</a>
+          <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/LICENSE">License file</a>
+          <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/SECURITY.md">Security</a>
+          <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/LICENSE" aria-label="License status reported by GitHub">
+            <img class="license-badge" src="https://img.shields.io/github/license/eduardopin/aws-iac-enterprise-library" loading="lazy" alt="License status reported by GitHub">
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

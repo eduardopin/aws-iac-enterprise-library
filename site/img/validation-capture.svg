@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="310" viewBox="0 0 1120 310" role="img" aria-labelledby="title description">
+  <title id="title">Offline repository validation capture</title>
+  <desc id="description">A real run of make hygiene safety in the repository root. Machine paths and hostnames are scrubbed by the renderer.</desc>
+  <rect width="1120" height="310" rx="20" fill="#0b0f17"/>
+  <rect x="1" y="1" width="1118" height="308" rx="19" fill="none" stroke="#354158" stroke-width="2"/>
+  <circle cx="34" cy="34" r="7" fill="#ff7a68"/>
+  <circle cx="58" cy="34" r="7" fill="#ffbd66"/>
+  <circle cx="82" cy="34" r="7" fill="#62d49b"/>
+  <text x="560" y="41" text-anchor="middle" fill="#98a7bc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">repository root · offline checks</text>
+  <line x1="0" y1="66" x2="1120" y2="66" stroke="#2a3447"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20">
+    <text x="54" y="112" fill="#ffbd66">$ make hygiene safety</text><text x="54" y="142" fill="#d7e0ed">python3 tools/module_hygiene_check.py</text><text x="54" y="172" fill="#d7e0ed">Module hygiene OK</text><text x="54" y="202" fill="#d7e0ed">bash tools/public_safety_audit.sh</text><text x="54" y="232" fill="#d7e0ed">Public safety audit OK</text>
+  </g>
+</svg>
