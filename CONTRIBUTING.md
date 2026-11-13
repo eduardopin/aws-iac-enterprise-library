@@ -6,9 +6,10 @@ Start with one of the scoped tasks in
 [`docs/community/GOOD_FIRST_ISSUES.md`](docs/community/GOOD_FIRST_ISSUES.md), or
 choose one module and its same-named example for a focused documentation fix.
 
-Pillow is only needed to run `scripts/render_site_assets.py`, which
-regenerates `site/og.png` and the validation capture; it is not needed to use
-the library.
+The site generators are not needed to use the library.
+`scripts/render_site_assets.py` regenerates the validation capture from a real
+`make hygiene safety` run, and `scripts/render_og.py` renders `site/og.png`
+with headless Chrome or Chromium (set `CHROME` to its path).
 
 1. Read the module's `README.md`, `variables.tf` and matching file under
    `examples/` before changing behavior.

@@ -55,37 +55,52 @@ if (filterPanel && filterInput && filterStatus && clearButton && emptyState) {
   applyFilter();
 }
 
-const liveRegion = document.createElement("div");
-liveRegion.className = "visually-hidden";
-liveRegion.setAttribute("role", "status");
-liveRegion.setAttribute("aria-live", "polite");
-liveRegion.setAttribute("aria-atomic", "true");
-document.body.append(liveRegion);
+// InstallSnippet copy button for the main.tf module block: rest "Copy", success "Copied" for 1.8s,
+// failure "Select text" with the block selected. Announcements go to the polite #copy-status region.
+const copyStatus = document.querySelector("#copy-status");
+
+const selectContents = (element) => {
+  const range = document.createRange();
+  range.selectNodeContents(element);
+  const selection = window.getSelection();
+  selection?.removeAllRanges();
+  selection?.addRange(range);
+};
 
 document.querySelectorAll("[data-copy]").forEach((frame) => {
   const code = frame.querySelector("code");
-  if (!code || !navigator.clipboard) {
+  const button = frame.querySelector(".po-copy");
+  if (!code || !button) {
     return;
   }
+  let resetTimer = 0;
+  button.hidden = false;
 
-  const button = document.createElement("button");
-  button.className = "copy-button";
-  button.type = "button";
-  button.textContent = "Copy";
-  button.setAttribute("aria-label", "Copy Terraform example");
+  const announce = (message) => {
+    if (copyStatus) {
+      copyStatus.textContent = message;
+    }
+  };
 
   button.addEventListener("click", async () => {
+    window.clearTimeout(resetTimer);
     try {
+      if (!navigator.clipboard) {
+        throw new Error("Clipboard API unavailable");
+      }
       await navigator.clipboard.writeText(code.textContent || "");
       button.textContent = "Copied";
-      liveRegion.textContent = "Terraform example copied to clipboard.";
-      window.setTimeout(() => {
+      button.dataset.state = "copied";
+      announce("Module block copied.");
+      resetTimer = window.setTimeout(() => {
         button.textContent = "Copy";
+        delete button.dataset.state;
       }, 1800);
     } catch {
-      liveRegion.textContent = "Copy failed. Select the code and copy it manually.";
+      button.textContent = "Select text";
+      button.dataset.state = "failed";
+      selectContents(code);
+      announce("Copy unavailable; module block selected.");
     }
   });
-
-  frame.append(button);
 });
