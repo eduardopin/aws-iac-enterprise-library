@@ -4,7 +4,8 @@
   <p>Reusable Terraform building blocks for AWS infrastructure, with consistent interfaces and reviewable examples.</p>
   <p>
     <a href="https://github.com/eduardopin/aws-iac-enterprise-library/actions/workflows/validate.yml"><img src="https://github.com/eduardopin/aws-iac-enterprise-library/actions/workflows/validate.yml/badge.svg" alt="Validate workflow status"></a>
-    <a href="https://github.com/eduardopin/aws-iac-enterprise-library/blob/main/LICENSE"><img src="https://img.shields.io/github/license/eduardopin/aws-iac-enterprise-library" alt="License reported by GitHub"></a>
+    <a href="https://eduardopin.github.io/aws-iac-enterprise-library/"><img src="https://img.shields.io/badge/website-eduardopin.github.io-5c4199" alt="Website: eduardopin.github.io/aws-iac-enterprise-library"></a>
+    <a href="https://github.com/eduardopin/aws-iac-enterprise-library"><img src="https://img.shields.io/github/stars/eduardopin/aws-iac-enterprise-library?style=flat&amp;label=stars" alt="GitHub stars"></a>
   </p>
   <p><a href="https://eduardopin.github.io/aws-iac-enterprise-library/"><strong>Explore the module catalogue</strong></a></p>
 </div>
@@ -48,7 +49,8 @@ Start with the architecture and operating model documents, then inspect the exam
 - `docs/` - design notes, operational guidance and review material.
 - `examples/` - runnable or adaptable examples with placeholder values.
 - `scripts/` - local validation helpers and the site generators
-  (`site_stats.py`, `render_site_assets.py` and `check_site_links.py`).
+  (`site_stats.py`, `render_site_assets.py`, `render_og.py` and
+  `check_site_links.py`).
 - `.github/workflows/` - continuous validation and repository hygiene checks.
 
 ## Confidentiality
