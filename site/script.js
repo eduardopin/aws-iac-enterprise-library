@@ -55,7 +55,8 @@ if (filterPanel && filterInput && filterStatus && clearButton && emptyState) {
   applyFilter();
 }
 
-// InstallSnippet copy button: rest "Copy", success "Copied" for 1.8s, failure "Select text" with the block selected.
+// InstallSnippet copy button for the main.tf module block: rest "Copy", success "Copied" for 1.8s,
+// failure "Select text" with the block selected. Announcements go to the polite #copy-status region.
 const copyStatus = document.querySelector("#copy-status");
 
 const selectContents = (element) => {
@@ -90,7 +91,7 @@ document.querySelectorAll("[data-copy]").forEach((frame) => {
       await navigator.clipboard.writeText(code.textContent || "");
       button.textContent = "Copied";
       button.dataset.state = "copied";
-      announce("Command copied.");
+      announce("Module block copied.");
       resetTimer = window.setTimeout(() => {
         button.textContent = "Copy";
         delete button.dataset.state;
@@ -99,7 +100,7 @@ document.querySelectorAll("[data-copy]").forEach((frame) => {
       button.textContent = "Select text";
       button.dataset.state = "failed";
       selectContents(code);
-      announce("Copy unavailable; command selected.");
+      announce("Copy unavailable; module block selected.");
     }
   });
 });

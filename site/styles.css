@@ -17,7 +17,7 @@ code { font-size: 0.9em; overflow-wrap: anywhere; }
 .iac-hero h1 { font-size: clamp(44px, 6.6vw, 80px); }
 .iac-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); align-items: start; }
 .iac-hero__side { display: grid; gap: var(--space-5); min-width: 0; }
-.iac-hero .po-install pre { font-size: 13px; }
+.iac-hero .po-install pre { font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; } /* the pinned ?ref= stays visible; Copy still copies the unwrapped text */
 .iac-stars { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-2); }
 .iac-stars img { display: block; width: auto; height: 20px; }
 .iac-facts { list-style: none; margin: var(--space-6) 0 0; padding: var(--space-4) 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); color: var(--ink-muted); font-size: 15px; }

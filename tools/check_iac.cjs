@@ -5,7 +5,8 @@ const BASE = process.env.BASE || 'http://127.0.0.1:8794/aws-iac-enterprise-libra
 const SITE = process.argv[2];
 const OUT = process.argv[3];
 const QUICK = process.argv[4] === 'quick';
-const exe = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell';
+const exe = process.env.CHROME || (process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell');
+if (!fs.existsSync(exe)) { console.error(`Chromium not found at ${exe}; set CHROME to a Chromium or chrome-headless-shell binary`); process.exit(2); }
 const R = {};
 
 const contrastFns = `
