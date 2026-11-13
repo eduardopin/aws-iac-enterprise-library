@@ -68,7 +68,7 @@ code { font-size: 0.9em; overflow-wrap: anywhere; }
 .filter-clear:hover:not(:disabled) { border-color: var(--ink); }
 .filter-clear:disabled { opacity: 0.55; cursor: not-allowed; }
 .iac-section .filter-help, .iac-section .filter-status { font-size: 14px; color: var(--ink-muted); margin-top: var(--space-2); }
-.module-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: var(--space-6) var(--space-5); }
+.module-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-6) var(--space-5); }
 .module-group[hidden] { display: none; }
 .module-group-heading { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); padding-bottom: var(--space-2); border-bottom: 1px solid var(--line-strong); }
 .module-group-heading h3 { font-size: 16px; }
@@ -79,7 +79,7 @@ code { font-size: 0.9em; overflow-wrap: anywhere; }
 .module-list a span { color: var(--ink-muted); }
 .module-list a:hover code { text-decoration: underline; text-underline-offset: 0.22em; }
 .module-list a:hover span { color: var(--accent); }
-.module-list code { font-size: 14px; }
+.module-list code { font-size: 14px; overflow-wrap: normal; }
 .empty-state { color: var(--ink-muted); }
 
 /* Anatomy */
@@ -116,9 +116,9 @@ code { font-size: 0.9em; overflow-wrap: anywhere; }
 .steps strong { display: block; }
 .iac-section .steps p { color: var(--ink-muted); margin-top: var(--space-1); font-size: 15px; }
 .review-callout { margin-top: var(--space-7); }
-.review-callout > * { display: block; }
-.review-callout { border-left: 4px solid var(--amber); padding-block: var(--space-2); }
-.review-callout p { color: var(--ink-muted); max-width: 70ch; margin-top: var(--space-1); }
+.review-callout > * { display: block; border-left: 4px solid var(--amber); padding-left: var(--space-4); }
+.review-callout > strong { padding-top: var(--space-2); padding-bottom: var(--space-1); }
+.review-callout p { color: var(--ink-muted); max-width: 70ch; margin-top: 0; padding-bottom: var(--space-2); }
 
 /* Contribute */
 .contribute-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-7); align-items: end; }
@@ -145,4 +145,8 @@ code { font-size: 0.9em; overflow-wrap: anywhere; }
 @media (max-width: 719px) {
   .iac-section, .iac-404 { padding-block: var(--space-8); }
   .file-list div { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+  .module-list code { font-size: 13px; }
 }
+
+/* Copy button: the DS sizes it at 36px; this page holds every control to a 44px target. */
+.po-install .po-copy { min-height: 44px; }
